@@ -28,7 +28,7 @@ class BrandController extends Controller
     {
         $validateData =  $request->validate([
             'brand_name' => 'required|unique:brands|min:4',
-            'brand_image' => 'required|mimes:jpg..jpeg,png',
+            'brand_image' => 'required|mimes:jpg,jpeg,png',
         ],
         [
             'brand_name.required' => 'Brand Harus di input',

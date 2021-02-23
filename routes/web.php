@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BrandController;
 use App\Models\User;
+use App\Models\Brand;
 use Illuminate\Support\Facades\DB;
 
 
@@ -24,7 +26,9 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/', function () {
-    return view('home');
+    $brands = Brand::all();
+    // dd(collection($brands));
+    return view('home',compact('brands'));
 });
 
 Route::get('/home', function () {
@@ -67,5 +71,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/user/logout',[BrandController::class, 'Logout'])->name('user.logout');
+
+
+
+Route::get('/home/slider',[HomeController::class, 'HomeSlider'])->name('home.slider');
+Route::get('/add/slider',[HomeController::class, 'AddSlider'])->name('add.slider');
+Route::post('/store/slider',[HomeController::class, 'StoreSlider'])->name('store.slider');
+Route::get('/home/delete/{id}',[HomeController::class, 'Delete'])->name('sliderdelete');
+
+
+Route::get('/home/edit/{}',[HomeController::class, 'Edit'])->name('slideredit');
+
  
 

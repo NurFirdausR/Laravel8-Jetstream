@@ -35,36 +35,41 @@
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                 aria-expanded="false" aria-controls="dashboard">
                 <i class="mdi mdi-view-dashboard-outline"></i>
-                <span class="nav-text">Dashboard</span> <b class="caret"></b>
+                <span class="nav-text">Home</span> <b class="caret"></b>
               </a>
               <ul  class="collapse show"  id="dashboard"
                 data-parent="#sidebar-menu">
                 <div class="sub-menu">
-                  
-                  
-                    
+
+                      <li  class="active" >
+                        <a class="sidenav-item-link" href="{{route('home.slider')}}">
+                          <span class="nav-text">Slider</span>
+                          
+                        </a>
+                      </li>
                       <li  class="active" >
                         <a class="sidenav-item-link" href="index.html">
-                          <span class="nav-text">Ecommerce</span>
+                          <span class="nav-text">Home About</span>
                           
                         </a>
                       </li>
                     
                   
-
-                  
-                  
-                    
-                      <li >
-                        <a class="sidenav-item-link" href="analytics.html">
-                          <span class="nav-text">Analytics</span>
+                      <li  class="active" >
+                        <a class="sidenav-item-link" href="index.html">
+                          <span class="nav-text">Home Portofolio</span>
                           
-                          <span class="badge badge-success">new</span>
+                        </a>
+                      </li>
+                      <li  class="active" >
+                        <a class="sidenav-item-link" href="{{route('all.brand')}}">
+                          <span class="nav-text">Home Brand</span>
                           
                         </a>
                       </li>
                     
                   
+                      
 
                   
                 </div>
@@ -341,10 +346,7 @@
                         </a>
                       </li>
                     
-                  
-
-                  
-                  
+                
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#authentication"
                       aria-expanded="false" aria-controls="authentication">
@@ -363,10 +365,7 @@
                         
                       </div>
                     </ul>
-                  </li>
-                  
-
-                  
+                  </li>                
                   
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#others"
@@ -386,18 +385,10 @@
                         
                       </div>
                     </ul>
-                  </li>
-                  
-
-                  
+                  </li>                  
                 </div>
               </ul>
             </li>
-          
-
-          
-
-          
             <li  class="has-sub" >
               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#documentation"
                 aria-expanded="false" aria-controls="documentation">
@@ -412,57 +403,29 @@
                     
                       <li class="section-title">
                         Getting Started
-                      </li>
-                    
-                  
-
-                  
-                  
-                    
+                      </li>               
                       <li >
                         <a class="sidenav-item-link" href="introduction.html">
                           <span class="nav-text">Introduction</span>
                           
                         </a>
-                      </li>
-                    
-                  
-
-                  
-                  
-                    
+                      </li>                
                       <li >
                         <a class="sidenav-item-link" href="setup.html">
                           <span class="nav-text">Setup</span>
                           
                         </a>
-                      </li>
-                    
-                  
-
-                  
-                  
-                    
+                      </li>             
                       <li >
                         <a class="sidenav-item-link" href="customization.html">
                           <span class="nav-text">Customization</span>
                           
                         </a>
                       </li>
-                    
-                  
-
-                  
-                  
-                    
+                     
                       <li class="section-title">
                         Layouts
                       </li>
-                    
-                  
-
-                  
-                  
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#headers"
                       aria-expanded="false" aria-controls="headers">
@@ -489,11 +452,7 @@
                         
                       </div>
                     </ul>
-                  </li>
-                  
-
-                  
-                  
+                  </li> 
                   <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#sidebar-navs"
                       aria-expanded="false" aria-controls="sidebar-navs">
@@ -524,38 +483,21 @@
                         
                         <li >
                           <a href="right-sidebar.html">Right Sidebar</a>
-                        </li>
-                        
+                        </li> 
                       </div>
                     </ul>
                   </li>
-                  
-
-                  
-                  
-                    
                       <li >
                         <a class="sidenav-item-link" href="rtl.html">
                           <span class="nav-text">RTL Direction</span>
-                          
                         </a>
-                      </li>
-                    
-                  
-
-                  
+                      </li> 
                 </div>
               </ul>
             </li>
-          
-
-          
         </ul>
-
       </div>
-
       <hr class="separator" />
-
       <div class="sidebar-footer">
         <div class="sidebar-footer-content">
           <h6 class="text-uppercase">
