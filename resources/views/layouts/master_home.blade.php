@@ -41,7 +41,7 @@
 
   <!-- ======= Header ======= -->
     @include('layouts.body.header')
-    @include('layouts.body.slider')
+        
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->

@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HomeAbout extends Model
+class ContactForm extends Model
 {
     use HasFactory;
-
-    protected $table = "home_abouts";
-    protected $fillable = ['title','short_dis','long_dis'];
+    protected $table = "contact_forms";
+    protected $guardd =[];
 }
