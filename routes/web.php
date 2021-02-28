@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Models\User;
@@ -79,10 +80,12 @@ Route::post('/store/contact',[ContactController::class, 'StoreContact'])->name('
 Route::get('/contact/edit/{id}',[ContactController::class, 'Edit'])->name('contactedit');
 Route::post('/contact/update/{id}',[ContactController::class, 'Update'])->name('contactupdate');
 Route::get('/contact/delete/{id}',[ContactController::class, 'delete'])->name('contactdelete');
-Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::get('/contact/message',[ContactController::class, 'AdminMessage'])->name('all.message');
+Route::get('/contact/delete/{id}',[ContactController::class, 'DeleteMessage'])->name('messagedelete');
 
 
 // contact form
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
 Route::post('/contact/form',[ContactController::class,'ContactForm'])->name('contact.form');
 
 
@@ -119,3 +122,16 @@ Route::get('/about/delete/{id}',[AboutController::class, 'Delete'])->name('about
 Route::get('/portofolio',[AboutController::class, 'Portofolio'])->name('portofolio');
  
 
+
+
+
+
+
+Route::get('/user/password',[ChangePass::class,'ChangePassword'])->name('change.password');
+Route::post('/password/update',[ChangePass::class,'PasswordUpdate'])->name('password.update');
+
+
+
+
+Route::get('/user/profile',[ChangePass::class,'ProfileEdit'])->name('profile.edit');
+Route::POST('/user/profile/update',[ChangePass::class,'ProfileUpdate'])->name('profile.update');

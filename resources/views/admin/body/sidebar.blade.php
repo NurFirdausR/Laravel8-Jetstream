@@ -97,8 +97,8 @@
                   </li>
                 
                   <li  class="active" >
-                    <a class="sidenav-item-link" href="">
-                      <span class="nav-text">Home Brand</span>
+                    <a class="sidenav-item-link" href="{{route('all.message')}}">
+                      <span class="nav-text">Contact Message</span>
                       
                     </a>
                   </li>

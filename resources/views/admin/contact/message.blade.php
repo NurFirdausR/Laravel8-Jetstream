@@ -1,54 +1,59 @@
-@extends('admin.admin_master')
+@extends('admin.admin_master');
 
 @section('content')
-    
+
     <div class="py-12">
 
         <div class="container">
-
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card">
 
-                   
+                      @if (session('success'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>
+                        {{session('success')}}
+                        </strong>
+
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      @endif
                         <div class="card-header">
-                            All Brand
+                            All Message
                         </div>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th scope="col">Sl No</th>
-                                    <th scope="col">Brand Name</th>
-                                    <th scope="col">Brand Image</th>
-                                    <th scope="col">Created at</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col" width="1%"> No </th>
+                                    <th scope="col" width="9%">Name</th>
+                                    <th scope="col" width="20%">Email</th>
+                                    <th scope="col" width="15%">Subject</th>
+                                    <th scope="col" width="20%">Message</th>
+                                    <th scope="col" width="6%">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($brands as $brand)
+                                @foreach ($ContactMessage as $message)
                                     
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$brand->brand_name}}</td>
-                                    <td><img src="{{ asset($brand->brand_image) }}" style="width: 100px; height:100px;" alt="" srcset=""></td>
-                                    @if ($brand->created_at == NULL)
-                                        <span class="text-danger">NO Date</span>
-                                      @else  
-                                      <td>{{    Carbon\Carbon::parse($brand->created_at)->diffForHumans()}}</td>
-                                        @endif
+                                    <td>{{$message->name}}</td>
+                                    <td>{{$message->email}}</td>
+                                    <td>{{$message->subject}}</td>
+                                    <td>{{$message->message}}</td>
                                         <td>
-                                            <a href="{{route('brandedit',[$brand->id])}}" class="btn btn-info">Edit</a>
-                                            <a href="{{route('branddelete',[$brand->id])}}" onclick="return confirm('Are you sure to Delete this Brand?')" class="btn btn-danger">Delete</a>
+                                            <a href="{{route('messagedelete',[$message->id])}}" onclick="return confirm('Are you sure to Delete this Brand?')" class="btn btn-danger">Delete</a>
                                         </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-                        {{$brands->links()}}
                     </div>
                 </div>
                     <div class="col-md-4">
-                        <div class="card">
+                        {{-- <div class="card">
                             <div class="card-header text-center">
                             Add Brand
                             </div>
@@ -71,13 +76,12 @@
                                   </form>
                             </div>
 
-                        </div>
+                        </div> --}}
                     </div>
 
             </div>
         </div>
 
-        @endsection
 
 
 
@@ -104,3 +108,21 @@
 
 
 
+
+
+
+
+
+
+
+
+ 
+        {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            --}}
+            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <x-jet-welcome />
+            </div> --}}
+            {{-- </div> --}}
+    </div>
+    
+@endsection

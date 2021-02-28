@@ -80,4 +80,16 @@ class ContactController extends Controller
         ]);
         return redirect()->route('contact')->with('success','Pesan anda berhasil di kirim!');
     }
+
+    public function AdminMessage()
+    {
+        $ContactMessage = ContactForm::all();
+        return view('admin.contact.message',compact('ContactMessage'));
+    }
+    public function DeleteMessage($id)
+    {
+        ContactForm::find($id)->Delete();
+        return redirect()->back()->with('success','Message Berhasil di Hapus!');
+
+    }
 }
